@@ -1,0 +1,13 @@
+div[data-slot="tabList"] {
+  flex-grow: 1;
+}
+
+span[data-slot="cursor"] {
+  width: 100%;
+}
+
+div[aria-label="Accordion"] {
+  background-color: #232425 !important;
+  box-shadow: none;
+  border: 1px solid white;
+}
