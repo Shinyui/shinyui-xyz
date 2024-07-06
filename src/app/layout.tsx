@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Head from "next/head";
 import { NextUIProvider } from "@nextui-org/react";
 import Nav from "@/components/Nav/Nav.component";
 import { Inter } from "next/font/google";
@@ -18,6 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-TW">
+      <head>
+        <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+      </head>
       <body className={inter.className}>
         <NextUIProvider>
           <main className="purple-dark text-foreground bg-background p-[16px]">
