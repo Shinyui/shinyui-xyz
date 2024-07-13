@@ -1,7 +1,7 @@
 "use client";
 
 import { Input, Button } from "@nextui-org/react";
-import { futureSize } from "@/actions/calculator.action";
+import { propFirmSize } from "@/actions/calculator.action";
 import { useFormState } from "react-dom";
 
 const initialState = {
@@ -11,17 +11,18 @@ const initialState = {
     risk: [],
     entry: [],
     sl: [],
+    contractSize: [],
   },
   tradeSize: 0,
   percentageChange: 0,
 };
 
 const FutureSize = () => {
-  const [formState, formAction] = useFormState(futureSize, initialState);
+  const [formState, formAction] = useFormState(propFirmSize, initialState);
 
   return (
     <>
-      <h1 className="text-3xl mb-[24px]">倉位計算機</h1>
+      <h1 className="text-3xl mb-[24px]">機構倉手數計算機</h1>
       <form action={formAction}>
         <div className="flex flex-col gap-[16px]">
           <Input
@@ -62,6 +63,15 @@ const FutureSize = () => {
             size="lg"
           />
 
+          <Input
+            name="contractSize"
+            label="合約大小"
+            style={{ color: "white" }}
+            isInvalid={formState.errors.sl?.join(",") ? true : false}
+            errorMessage={formState.errors.sl?.join(",")}
+            size="lg"
+          />
+
           <Button color="primary" type="submit">
             計算
           </Button>
@@ -76,7 +86,7 @@ const FutureSize = () => {
           />
 
           <Input
-            label="倉位價值"
+            label="手數"
             style={{ color: "white" }}
             size="lg"
             isReadOnly={true}

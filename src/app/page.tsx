@@ -51,6 +51,19 @@ const Home = async () => {
             </div>
           </Link>
 
+          <Link href={"/calculator/propfirm-size"}>
+            <div className="aspect-[2/1] h-[100px]">
+              <Card
+                className="bg-transparent border-0"
+                isBlurred={false}
+                isPressable={true}
+                shadow="none"
+              >
+                <OrangeLavaCard title="手數計算機" subTitle="機構倉必備" />
+              </Card>
+            </div>
+          </Link>
+
           <Link href={"https://www.aicoin.com/en"}>
             <div className="aspect-[2/1] h-[100px]">
               <Card
